@@ -140,7 +140,10 @@ function generate(){
     }
     if(isEmbed()){
         //document.getElementById('description').setAttribute('content', 'Primary : ' + Primary + '\n' + 'Secondary : ' + Secondary + '\n' + 'Melee : ' + Melee);
-        document.getElementsByTagName('meta')["description"].content = "My new page description!!";
+        const metaTag = document.querySelector('meta[property="og:description"]');
+        if (metaTag) {
+        metaTag.setAttribute('content', 'please work');
+        }
     }
 }
 
