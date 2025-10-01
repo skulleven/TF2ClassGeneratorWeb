@@ -139,7 +139,8 @@ function generate(){
         }
     }
     if(isEmbed()){
-        document.getElementById('description').setAttribute('content', 'test');
+        //document.getElementById('description').setAttribute('content', 'Primary : ' + Primary + '\n' + 'Secondary : ' + Secondary + '\n' + 'Melee : ' + Melee);
+        document.getElementsByTagName('meta')["description"].content = "My new page description!!";
     }
 }
 
