@@ -110,6 +110,7 @@ function getLoadout(Class){
 function generate(){
     randomizedClassName = className[getRandomInt(className.length)];
     getLoadout(randomizedClassName);
+    document.getElementById("embedClass").content = capitalizeFirstLetter(randomizedClassName);
     document.getElementById("primary").innerHTML = Primary;
     document.getElementById("secondary").innerHTML = Secondary;
     document.getElementById("melee").innerHTML = Melee;
