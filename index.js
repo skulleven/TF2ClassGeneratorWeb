@@ -139,11 +139,7 @@ function generate(){
         }
     }
     if(isEmbed()){
-        //document.getElementById('description').setAttribute('content', 'Primary : ' + Primary + '\n' + 'Secondary : ' + Secondary + '\n' + 'Melee : ' + Melee);
-        const metaTag = document.querySelector('meta[property="og:description"]');
-        if (metaTag) {
-        metaTag.setAttribute('content', 'please work');
-        }
+        //TODO: Change this dynamically
     }
 }
 
