@@ -139,7 +139,7 @@ function generate(){
         }
     }
     if(isEmbed()){
-        document.getElementById('description').setAttribute('content', 'Primary : ' + Primary + "\n" + "Secondary : " + Secondary + "\n" + "Melee : " + Melee);
+        document.getElementById('description').setAttribute('content', 'test');
     }
 }
 
