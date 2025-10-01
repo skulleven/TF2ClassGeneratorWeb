@@ -44,6 +44,17 @@ let Watch;
 
 const imageFolder = "Images/";
 
+function isEmbed(isEmbed){
+    switch (document.getElementById("embedChecker").innerHTML) {
+        case "index":
+            return false;
+            break;
+        case "embed":
+            return true;
+            break;
+    }
+}
+
 function getRandomInt(max){
     return Math.floor(Math.random() * (max));
 }
@@ -108,22 +119,27 @@ function getLoadout(Class){
 }
 
 function generate(){
-    randomizedClassName = className[getRandomInt(className.length)];
-    getLoadout(randomizedClassName);
-    document.getElementById("embedClass").content = capitalizeFirstLetter(randomizedClassName);
-    document.getElementById("primary").innerHTML = Primary;
-    document.getElementById("secondary").innerHTML = Secondary;
-    document.getElementById("melee").innerHTML = Melee;
-    document.getElementById("watch").innerHTML = Watch;
-    document.getElementById("primaryImage").src = imageFolder + Primary + ".png";
-    document.getElementById("secondaryImage").src = imageFolder + Secondary + ".png";
-    document.getElementById("meleeImage").src = imageFolder + Melee + ".png";
-    document.getElementById("anan").src = imageFolder + capitalizeFirstLetter(randomizedClassName) + ".png";
-    if(randomizedClassName == "spy"){
-        document.getElementById("watchImage").src = imageFolder + Watch + ".png";
+    if(isEmbed() == false){
+        randomizedClassName = className[getRandomInt(className.length)];
+        getLoadout(randomizedClassName);
+        document.getElementById("embedClass").content = capitalizeFirstLetter(randomizedClassName);
+        document.getElementById("primary").innerHTML = Primary;
+        document.getElementById("secondary").innerHTML = Secondary;
+        document.getElementById("melee").innerHTML = Melee;
+        document.getElementById("watch").innerHTML = Watch;
+        document.getElementById("primaryImage").src = imageFolder + Primary + ".png";
+        document.getElementById("secondaryImage").src = imageFolder + Secondary + ".png";
+        document.getElementById("meleeImage").src = imageFolder + Melee + ".png";
+        document.getElementById("anan").src = imageFolder + capitalizeFirstLetter(randomizedClassName) + ".png";
+        if(randomizedClassName == "spy"){
+            document.getElementById("watchImage").src = imageFolder + Watch + ".png";
+        }
+        else{
+            document.getElementById("watchImage").src = "";
+        }
     }
-    else{
-        document.getElementById("watchImage").src = "";
+    if(isEmbed()){
+        document.getElementById("description").content = "test";
     }
 }
 
